@@ -1,0 +1,6 @@
+sys-kernel/hardened-sources
+app-admin/sysklogd
+sys-process/cronie
+net-misc/dhcpcd
+sys-apps/gradm
+sys-boot/grub:2
