@@ -8,7 +8,7 @@ rm zmora-judge.img.gz
 rm -rf build
 mkdir -p build
 
-fallocate -l 20G zmora-judge.img
+fallocate -l 8G zmora-judge.img
 echo '102400,;' | sfdisk zmora-judge.img
 
 LOOP_DEV=`losetup -fP --show zmora-judge.img`

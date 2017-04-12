@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bash scripts/clean_chroot.sh
+
 rm packages.tar
 
 bash scripts/prepare_chroot.sh

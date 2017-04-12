@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bash scripts/clean_chroot.sh
+
 source scripts/prepare_chroot.sh
 
 chroot build /bin/bash /install_soft.sh
@@ -9,6 +11,8 @@ chroot build /bin/bash /build_kernel.sh
 
 chroot build /bin/bash -c "grub-install --target=i386-pc ${LOOP_DEV}"
 chroot build /bin/bash -c "grub-mkconfig -o /boot/grub/grub.cfg"
+
+chroot build /bin/bash /configure.sh
 
 bash scripts/clean_chroot.sh
 
