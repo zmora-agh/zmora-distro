@@ -1,0 +1,6 @@
+*.swp
+/build
+/stage3-*.tar.bz2
+/zmora-judge.img
+/zmora-judge.img.gz
+/packages.tar
