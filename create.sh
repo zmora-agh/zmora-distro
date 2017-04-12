@@ -16,4 +16,4 @@ chroot build /bin/bash /configure.sh
 
 bash scripts/clean_chroot.sh
 
-#gzip zmora-judge.img
+gzip zmora-judge.img
