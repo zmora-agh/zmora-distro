@@ -7,4 +7,4 @@ ln -s net.lo net.eth0
 rc-update add net.eth0 default
 cd /
 
-echo "szatan" | passwd --stdin
+echo "root:szatan" | chpasswd
