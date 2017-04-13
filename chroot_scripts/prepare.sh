@@ -3,7 +3,7 @@ source /etc/profile
 emerge-webrsync
 emerge --sync --quiet
 
-eselect profile set hardened/linux/amd64/selinux
+eselect profile set default/linux/amd64/13.0
 
 emerge --config sys-libs/timezone-data
 
