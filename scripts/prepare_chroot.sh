@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STAGE3_URL=http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-hardened/stage3-amd64-hardened-20170413.tar.bz2
+STAGE3_BASE=http://distfiles.gentoo.org/releases/amd64/autobuilds
 ROOT_SSH_KEY='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL9J5nV3qihryewsUlBH///caAQ3zWAEjr3ZqTtLyvBd maxmati@leopardus'
 
 rm zmora-judge.img
@@ -17,7 +17,9 @@ LOOP_DEV=`losetup -fP --show zmora-judge.img`
 mkfs.ext4 ${LOOP_DEV}p1
 mount ${LOOP_DEV}p1 build
 
+STAGE3_FILE=`curl http://distfiles.gentoo.org/releases/amd64/autobuilds/latest-stage3-amd64.txt | grep -v '^#' | cut -f 1 -d ' '`
 
+STAGE3_URL="$STAGE3_BASE/$STAGE3_FILE"
 curl -O $STAGE3_URL
 tar xjpf stage3-*.tar.bz2 --xattrs --numeric-owner -C build/
 
