@@ -1,12 +1,14 @@
 #!/bin/bash
 
-STAGE3_URL=http://gentoo.prz.rzeszow.pl/releases/amd64/autobuilds/current-stage3-amd64-hardened/stage3-amd64-hardened-20170406.tar.bz2
+STAGE3_URL=http://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-hardened/stage3-amd64-hardened-20170413.tar.bz2
 ROOT_SSH_KEY='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL9J5nV3qihryewsUlBH///caAQ3zWAEjr3ZqTtLyvBd maxmati@leopardus'
 
 rm zmora-judge.img
 rm zmora-judge.img.gz
 rm -rf build
 mkdir -p build
+
+set -e
 
 fallocate -l 15G zmora-judge.img
 echo '102400,;' | sfdisk zmora-judge.img

@@ -1,3 +1,5 @@
+set -e
+
 source /etc/profile
 
 emerge-webrsync

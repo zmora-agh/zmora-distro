@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export MAKEOPTS="-j12"
+export MAKEOPTS="-j4"
 emerge -uDN --buildpkg @world

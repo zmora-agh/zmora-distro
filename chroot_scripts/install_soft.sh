@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export MAKEOPTS="-j12"
+export MAKEOPTS="-j4"
 emerge -uDN @world
 rc-update add sysklogd default
 rc-update add cronie default

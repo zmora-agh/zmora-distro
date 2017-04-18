@@ -4,5 +4,7 @@
 #make alldefconfig
 #make -j9 all
 #make install
-genkernel --makeopts=-j9 all
+set -e
+
+genkernel --makeopts=-j4 all
 
