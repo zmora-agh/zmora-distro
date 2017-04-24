@@ -6,5 +6,5 @@
 #make install
 set -e
 
-genkernel --makeopts=-j4 all
+genkernel --kernel-config=/kernel_config --makeopts=-j`nproc` all
 
