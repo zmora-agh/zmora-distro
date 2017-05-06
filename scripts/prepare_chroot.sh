@@ -41,11 +41,11 @@ echo 'hostname="zmora-judge"' > build/etc/conf.d/hostname
 mkdir -p build/root/.ssh
 echo $ROOT_SSH_KEY > build/root/.ssh/authorized_keys
 
+mkdir -p build/tmp
+
+cp -r data build/tmp/
+
 chroot build /bin/bash /prepare.sh
 
 cat data/world > build/var/lib/portage/world
-
-echo "PORTAGE_BINHOST=\"http://bindist.zmora-agh.memleak.pl/packages\"
-FEATURES=\"getbinpkg\"
-" >> build/etc/portage/make.conf
 
