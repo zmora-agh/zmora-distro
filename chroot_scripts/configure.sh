@@ -11,4 +11,6 @@ ln -s net.lo net.eth0
 rc-update add net.eth0 default
 cd /
 
+rc-update add zmora-judge default
+
 echo 'root:$z4t4n' | chpasswd

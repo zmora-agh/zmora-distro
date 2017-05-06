@@ -1,4 +1,6 @@
 *.swp
+*.vmdk
+*.ova
 /build
 /stage3-*.tar.bz2
 /zmora-judge.img
