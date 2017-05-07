@@ -3,12 +3,14 @@
 STAGE3_BASE=http://distfiles.gentoo.org/releases/amd64/autobuilds
 ROOT_SSH_KEY='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL9J5nV3qihryewsUlBH///caAQ3zWAEjr3ZqTtLyvBd maxmati@leopardus'
 
-rm zmora-judge.img
-rm zmora-judge.img.gz
+rm -f zmora-judge.img
+rm -f zmora-judge.img.gz
 rm -rf build
 mkdir -p build
 
 set -e
+
+echo "====================================Creating basic disk=================================="
 
 fallocate -l 15G zmora-judge.img
 echo '102400,;' | sfdisk zmora-judge.img
@@ -28,6 +30,9 @@ mount --rbind /sys build/sys
 mount --make-rslave build/sys
 mount --rbind /dev build/dev
 mount --make-rslave build/dev
+
+
+echo "====================================Preparing basic config===================================="
 
 cp chroot_scripts/* build/
 cp data/fstab build/etc/fstab
