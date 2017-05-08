@@ -13,4 +13,6 @@ cd /
 
 rc-update add zmora-judge default
 
+cp /tmp/data/zmora-judge-conf /etc/conf.d/zmora-judge
+
 echo 'root:$z4t4n' | chpasswd
