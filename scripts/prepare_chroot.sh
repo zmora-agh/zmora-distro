@@ -1,7 +1,8 @@
 #!/bin/bash
 
 STAGE3_BASE=http://distfiles.gentoo.org/releases/amd64/autobuilds
-ROOT_SSH_KEY='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL9J5nV3qihryewsUlBH///caAQ3zWAEjr3ZqTtLyvBd maxmati@leopardus'
+ROOT_SSH_KEY="ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL9J5nV3qihryewsUlBH///caAQ3zWAEjr3ZqTtLyvBd maxmati@leopardus\n
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8ZnIT9zUoVU0wxiVCIE9Njpw8yM6XmtR4JoXmKzTSNDX7aUbfRS3mHvnZwtUwzu8N5sYLFwwwGx2I69GTIq3wYaFZydsZmXazFM5tH6ylqYsAe9tyygJT3SNVeulNdF2hjLXMKuhT/a9O8w0ZotFmIciF5SEjK/CH6Cy2AkTfIV9EFEEqMB1cgOqS/5TzRiX5X1jw3q88UzeimnHUFbu5F/Gaf5nGctm4sYIWobv4NYbshccsfJoYwNiPxCiQQuLtHQGblRdWsUbyifbHd9U2ZnOE+zKfL4mDfKaUwMNE1HgSD3fKs38iUW/ke1cF+RzQjMr6s6ZULEB3imvGsgdl mmos@j3b"
 
 rm -f zmora-judge.img
 rm -f zmora-judge.img.gz
@@ -44,7 +45,7 @@ echo "en_US.UTF-8 UTF-8" > build/etc/locale.gen
 echo 'hostname="zmora-judge"' > build/etc/conf.d/hostname
 
 mkdir -p build/root/.ssh
-echo $ROOT_SSH_KEY > build/root/.ssh/authorized_keys
+echo -e $ROOT_SSH_KEY > build/root/.ssh/authorized_keys
 
 mkdir -p build/tmp
 
